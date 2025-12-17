@@ -1,71 +1,54 @@
-# Email Sender Script
+# Automation Scripts Project
 
-This Python script (`send-emails.py`) allows you to send personalized bulk emails using an SMTP server (defaulted to Gmail).
+This repository contains a suite of python scripts designed to automate common administrative and file management tasks.
 
-## Features
-- Sends emails via SMTP.
-- Personalizes the email body with the recipient's company name/name.
-- Handles multiple recipients from a dictionary.
+## 🚀 Scripts
 
-## Prerequisites
-- Python 3.x installed.
-- A Gmail account (or another email provider with SMTP access).
-- An **App Password** if using Gmail (since less secure apps are no longer supported).
+### 1. `send-emails.py` - Automated Email Sender
+A robust script to send personalized bulk emails using SMTP (Gmail).
 
-## Configuration
+- **Features**: 
+  - Personalization placeholders (`{company_name}`).
+  - Logging of success/failure.
+  - Exception handling for robust execution.
+- **Config**: Edit `SENDER_EMAIL` and `SENDER_PASSWORD` in the script.
 
-1.  **Sender Credentials**:
-    Open `send-emails.py` and update the following variables:
-    ```python
-    SENDER_EMAIL = "your-email@gmail.com"
-    SENDER_PASSWORD = "your-app-password"
-    ```
-    > **⚠️ Security Warning**: It is not recommended to hardcode passwords in scripts, especially if pushing to a public repository. Consider using environment variables or a separate config file.
+### 2. `generate_certificates.py` - Certificate Generator
+Generates certificates from a template and a list of names.
 
-2.  **Recipients List**:
-    Update the `recipients` dictionary in the script:
-    ```python
-    recipients = {
-        "Company Name 1": "email1@example.com",
-        "Company Name 2": "email2@example.com"
-    }
-    ```
-    The key is used to personalize the email (e.g., "Dear Team {Company Name 1}"), and the value is the destination email address.
+- **Features**:
+  - Automatically center text.
+  - Supports custom fonts.
+  - CLI support.
+- **Usage**:
+  ```bash
+  python generate_certificates.py [names.csv] --template template.png --output ./certs
+  ```
 
-3.  **Email Content**:
-    Modify the `subject` and `body` variables to customize your message. ensure `{company_name}` remains in the body string for the personalization logic to work, or remove the `.format()` call in the sending loop if you don't need it.
+### 3. `organize_files.py` - Smart File Organizer
+ cleans up cluttered directories by sorting files into categorized folders.
 
-## Usage
+- **Categories**: Images, Documents, Videos, Music, Archives, Scripts, Executables.
+- **Usage**:
+  ```bash
+  python organize_files.py [directory]
+  
+  # Dry Run (Safe Mode)
+  python organize_files.py --dry-run
+  ```
 
-Run the script from your terminal:
+### 4. `utils.py` - Shared Helpers
+Common utility functions for logging and file management used across the project.
 
+## 📦 Requirements
+
+Install dependencies:
 ```bash
-python send-emails.py
+pip install -r requirements.txt
 ```
 
-## 📜 Other Automation Scripts
-
-### 1. Certificate Generator (`generate_certificates.py`)
-Generates bulk personalized certificates from a CSV file.
-
-- **Setup**:
-  1. Install dependencies: `pip install -r requirements.txt`.
-  2. Add a `certificate_template.png` to the folder.
-  3. Create/Update `names.csv` with the list of names.
-- **Usage**:
-  ```bash
-  python generate_certificates.py
-  ```
-
-### 2. File Organizer (`organize_files.py`)
-Organizes the files in the current directory into folders based on their extension (Images, Docs, Scripts, etc.).
-
-- **Usage**:
-  ```bash
-  python organize_files.py
-  ```
-
-
-## Troubleshooting
-- **Authentication Error**: Ensure you are using an App Password, not your login password.
-- **Connection Issues**: Check your internet connection and firewall settings. Ensure port 587 is allowed.
+## 🛠️ Contribution
+1. Fork the repo.
+2. Create a feature branch.
+3. Commit your changes.
+4. Push to the branch. 
