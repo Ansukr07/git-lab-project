@@ -43,6 +43,29 @@ Run the script from your terminal:
 python send-emails.py
 ```
 
+## 📜 Other Automation Scripts
+
+### 1. Certificate Generator (`generate_certificates.py`)
+Generates bulk personalized certificates from a CSV file.
+
+- **Setup**:
+  1. Install dependencies: `pip install -r requirements.txt`.
+  2. Add a `certificate_template.png` to the folder.
+  3. Create/Update `names.csv` with the list of names.
+- **Usage**:
+  ```bash
+  python generate_certificates.py
+  ```
+
+### 2. File Organizer (`organize_files.py`)
+Organizes the files in the current directory into folders based on their extension (Images, Docs, Scripts, etc.).
+
+- **Usage**:
+  ```bash
+  python organize_files.py
+  ```
+
+
 ## Troubleshooting
 - **Authentication Error**: Ensure you are using an App Password, not your login password.
 - **Connection Issues**: Check your internet connection and firewall settings. Ensure port 587 is allowed.
