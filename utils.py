@@ -1,3 +1,6 @@
+"""
+Utility functions for file operations and logging.
+"""
 import os
 import logging
 import sys
