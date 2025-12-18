@@ -8,6 +8,7 @@ dry runs, and comprehensive reporting.
 
 Author: Ansu Kumar
 Version: 3.0.0
+__version_info__ = (3, 0, 0)
 Date: 2025-12-17
 """
 
