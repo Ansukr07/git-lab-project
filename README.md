@@ -4,6 +4,9 @@ This repository contains a suite of python scripts designed to automate common a
 
 ## 🚀 Scripts
 
+*Last Updated for Submission*
+
+
 ### 1. `send-emails.py` - Automated Email Sender
 A robust script to send personalized bulk emails using SMTP (Gmail).
 
