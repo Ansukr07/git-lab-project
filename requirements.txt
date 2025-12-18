@@ -1,3 +1,6 @@
 Pillow
 pypdf
 requests
+
+# Core dependencies for the project
+
