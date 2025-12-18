@@ -110,6 +110,7 @@ def main():
     parser.add_argument("--width", type=int, default=1920, help="Target max width")
     parser.add_argument("--height", type=int, default=1080, help="Target max height")
     parser.add_argument("--quality", type=int, default=85, help="JPEG Output quality (1-100)")
+    # Default quality is set to 85 for a good balance of size and fidelity
 
     args = parser.parse_args()
 
